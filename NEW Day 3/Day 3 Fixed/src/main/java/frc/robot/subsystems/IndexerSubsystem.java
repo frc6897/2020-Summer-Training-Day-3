@@ -17,13 +17,18 @@ public class IndexerSubsystem extends SubsystemBase {
     private CANSparkMax spark1 = new CANSparkMax(0, CANSparkMaxLowLevel.MotorType.kBrushless);
     private CANSparkMax spark2 = new CANSparkMax(1, CANSparkMaxLowLevel.MotorType.kBrushless);
     private TalonSRX talon1 = new TalonSRX(2);
+  
   }
 
   public storeBallUp() {
-    
+    spark1.set(-0.8);
+    talon1.set(ControlMode.PercentOutput, 0.8);
+    talon1.setNeutralMode(NeutralMode.Brake);
+
   }
   public shootBall() {
-
+    talon1.set(ControlMode.PercentOutput, -0.8);
+    talon1.setNeutralMode(NeutralMode.Coast);
   }
   @Override
   public void periodic() {
