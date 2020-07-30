@@ -9,16 +9,38 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class IndexerSubsytem2 extends SubsystemBase {
-  /**
-   * Creates a new IndexerSubsytem2.
-   */
-  public IndexerSubsytem2() {
 
+public class IndexerSubsystem extends SubsystemBase {
+  /**
+   * Creates a new IndexerSubsystem.
+   * 
+   */
+
+  private CANSparkmax spark1;
+  private CANSparkMax spark2; 
+    private TalonSRX talon1;
+
+  public IndexerSubsystem() {
+    CANSparkMax spark1 = new CANSparkMax(0, CANSparkMaxLowLevel.MotorType.kBrushless);
+    CANSparkMax spark2 = new CANSparkMax(1, CANSparkMaxLowLevel.MotorType.kBrushless);
+    TalonSRX talon1 = new TalonSRX(2);
+  
   }
 
+  
+  public storeBallUp() {
+    spark1.set(-0.8);
+    talon1.set(ControlMode.PercentOutput, 0.8);
+    talon1.setNeutralMode(NeutralMode.Brake);
+
+  }
+  public shootBall() {
+    talon1.set(ControlMode.PercentOutput, -0.8);
+    talon1.setNeutralMode(NeutralMode.Coast);
+  }
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
   }
+
 }
