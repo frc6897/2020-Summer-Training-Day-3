@@ -12,6 +12,8 @@ import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.commands.StoreBallUp;
+import frc.robot.commands.ShootBall;
 
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -24,8 +26,12 @@ public class RobotContainer {
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
+  public static StoreBallUp m_StoreBallUp = new StoreBallUp();
+  public static ShootBall m_ShootBall = new ShootBall();
 
-
+  private Joystick joy1 = new Joystick(0);
+  private JoystickButton button1 = new JoystickButton(0);
+  private JoystickButton button2 = new JoystickButton(1);
 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
@@ -33,6 +39,7 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
+    
   }
 
   /**
@@ -42,6 +49,8 @@ public class RobotContainer {
    * {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
+    button1.whileHeld(new StoreBallUp());
+    button2.whileHeld(new ShootBall());  
   }
 
 
