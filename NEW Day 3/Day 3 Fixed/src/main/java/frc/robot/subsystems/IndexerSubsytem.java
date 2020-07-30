@@ -7,8 +7,13 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import com.ctre.phoenix.
+import edu.wpi.first.wpilibj2.command.SubsystemBase;import com.ctre.phoenix.
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel;
+import edu.wpi.first.wpilibj.Joystick;
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.ctre.phoenix.motorcontrol.NeutralMode;  
 
 public class IndexerSubsystem extends SubsystemBase {
   /**
@@ -46,8 +51,3 @@ public class IndexerSubsystem extends SubsystemBase {
     talon1.set(ControlMode.PercentOutput, 0);
   }
   @Override
-  public void periodic() {
-    // This method will be called once per scheduler run
-  }
-
-}
