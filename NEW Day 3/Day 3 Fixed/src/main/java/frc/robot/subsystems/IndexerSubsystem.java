@@ -9,17 +9,25 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
+
 public class IndexerSubsystem extends SubsystemBase {
   /**
    * Creates a new IndexerSubsystem.
+   * 
    */
+
+  private CANSparkmax spark1;
+  private CANSparkMax spark2; 
+    private TalonSRX talon1;
+
   public IndexerSubsystem() {
-    private CANSparkMax spark1 = new CANSparkMax(0, CANSparkMaxLowLevel.MotorType.kBrushless);
-    private CANSparkMax spark2 = new CANSparkMax(1, CANSparkMaxLowLevel.MotorType.kBrushless);
-    private TalonSRX talon1 = new TalonSRX(2);
+    CANSparkMax spark1 = new CANSparkMax(0, CANSparkMaxLowLevel.MotorType.kBrushless);
+    CANSparkMax spark2 = new CANSparkMax(1, CANSparkMaxLowLevel.MotorType.kBrushless);
+    TalonSRX talon1 = new TalonSRX(2);
   
   }
 
+  
   public storeBallUp() {
     spark1.set(-0.8);
     talon1.set(ControlMode.PercentOutput, 0.8);
