@@ -11,7 +11,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel;
-import edu.wpi.first.wpilibj.Joystick;
+
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.NeutralMode;  
@@ -27,9 +27,9 @@ public class IndexerSubsystem extends SubsystemBase {
     private TalonSRX talon1;
 
   public IndexerSubsystem() {
-    CANSparkMax spark1 = new CANSparkMax(0, CANSparkMaxLowLevel.MotorType.kBrushless);
-    CANSparkMax spark2 = new CANSparkMax(1, CANSparkMaxLowLevel.MotorType.kBrushless);
-    TalonSRX talon1 = new TalonSRX(2);
+     spark1 = new CANSparkMax(0, CANSparkMaxLowLevel.MotorType.kBrushless);
+     spark2 = new CANSparkMax(1, CANSparkMaxLowLevel.MotorType.kBrushless);
+     talon1 = new TalonSRX(2);
 
     spark2.follow(spark1,true);
     talon1.setNeutralMode(NeutralMode.Coast);
