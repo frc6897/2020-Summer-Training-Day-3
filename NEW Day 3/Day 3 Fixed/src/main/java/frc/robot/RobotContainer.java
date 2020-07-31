@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.commands.StoreBallUp;
 import frc.robot.commands.ShootBall;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -31,8 +32,8 @@ public class RobotContainer {
   public static ShootBall m_ShootBall = new ShootBall();
 
   private Joystick joy1 = new Joystick(0);
-  private JoystickButton button1 = new JoystickButton(0);
-  private JoystickButton button2 = new JoystickButton(1);
+  private JoystickButton button1 = new JoystickButton(joy1, 1);
+  private JoystickButton button2 = new JoystickButton(joy1, 2);
 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
