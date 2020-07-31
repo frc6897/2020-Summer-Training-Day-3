@@ -25,9 +25,9 @@ public class IndexerSubsystem extends SubsystemBase {
   private CANSparkMax sparkMax;
   
   public IndexerSubsystem() {
-    TalonSRX talon1 = new TalonSRX(Constants.TALON_1_CANID);
-    TalonSRX talon2 = new TalonSRX(Constants.TALON_2_CANID);
-    CANSparkMax sparkMax = new CANSparkMax(Constants.SPARKMAX_CANID, CANSparkMaxLowLevel.MotorType.kBrushless);
+    this.talon1 = new TalonSRX(Constants.TALON_1_CANID);
+    this.talon2 = new TalonSRX(Constants.TALON_2_CANID);
+    this.sparkMax = new CANSparkMax(Constants.SPARKMAX_CANID, CANSparkMaxLowLevel.MotorType.kBrushless);
     
     talon2.set(ControlMode.Follower, 0);                  //the TalonSRXs will 
     talon2.setInverted(InvertType.OpposeMaster);         // be the two top motors

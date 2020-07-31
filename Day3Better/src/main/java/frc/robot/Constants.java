@@ -23,12 +23,21 @@ public final class Constants {
     public static double FULL_SPEED_BACKWARD = -1;
 
     //Port Numbers
-    public static int TALON_1_CANID = 0;
-    public static int TALON_2_CANID = 1;
+    public static int TALON_1_CANID = 0; // indexer
+    public static int TALON_2_CANID = 1; // indexer
+    public static int TALON_3_CANID = 2; //intake
     public static int SPARKMAX_CANID = 2;
-    public static int BUTTON_1_PORT = 0;
-    public static int BUTTON_2_PORT = 1;
+    public static int BUTTON_1_PORT = 0; // indexer (ball down)
+    public static int BUTTON_2_PORT = 1; // indexer (ball up)
+    public static int BUTTON_3_PORT = 2; //intake (intake down and feed)
+    public static int BUTTON_4_PORT = 3; //intake (intake up)
     public static int JOYSTICK1_PORT = 0;
+
+    //Double Solenoids
+    public static int LEFT_SOLENOID_PORT1 = 2; //intake
+    public static int LEFT_SOLENOID_PORT2 = 3; // intake
+    public static int RIGHT_SOLENOID_PORT1 = 0; //intake
+    public static int RIGHT_SOLENOID_PORT2 = 1; //intake
 
 
 }

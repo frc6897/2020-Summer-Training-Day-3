@@ -10,15 +10,19 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
-import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.BallUp;
 import frc.robot.commands.BallDown;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.IntakeDownAndFeed;
+import frc.robot.commands.IntakeUp;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.IndexerSubsystem;
+import frc.robot.subsystems.IntakeSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Constants;
+import frc.robot.commands.IntakeDownAndFeed;
+import frc.robot.commands.IntakeUp;
 
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -30,14 +34,19 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
   public static IndexerSubsystem m_IndexerSubsystem = new IndexerSubsystem();
+  public static IntakeSubsystem m_IntakeSubsystem = new IntakeSubsystem();
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
   public static BallUp m_BallUp = new BallUp();
   public static BallDown m_BallDown = new BallDown();
+  public static IntakeUp m_IntakeUp = new IntakeUp();
+  public static IntakeDownAndFeed m_IntakeDownAndFeed = new IntakeDownAndFeed();
 
   protected GenericHID operatorGamepad = new Joystick(Constants.JOYSTICK1_PORT);
   private JoystickButton button1 = new JoystickButton(operatorGamepad, Constants.BUTTON_1_PORT);
   private JoystickButton button2 = new JoystickButton(operatorGamepad, Constants.BUTTON_2_PORT);
+  private JoystickButton button3 = new JoystickButton(operatorGamepad, Constants.BUTTON_3_PORT);
+  private JoystickButton button4 = new JoystickButton(operatorGamepad, Constants.BUTTON_4_PORT);
 
 
 
@@ -60,6 +69,8 @@ public class RobotContainer {
 
     button1.whileHeld(new BallDown());
     button2.whileHeld(new BallUp());
+    button3.whileHeld(new IntakeDownAndFeed());
+    button4.whileHeld(new IntakeUp());
   }
 
 
