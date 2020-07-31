@@ -43,6 +43,16 @@ public class RobotContainer {
   private void configureButtonBindings() {
     int button = 2;
     button.whenPressed(runIndexer());
+    if (whenHeld = true && button == 1) {
+      button.execute(runSet);
+    }
+    else if (whenHeld = true && button == 2) {
+      button.execute(runUp);
+    }
+    else if (whenHeld = true && button == 3) {
+      button.execute(runDown);
+    } else {
+    }
   }
 
 
