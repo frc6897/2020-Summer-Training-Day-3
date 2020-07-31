@@ -8,10 +8,13 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
-import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.*;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.IndexerSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -22,8 +25,13 @@ import edu.wpi.first.wpilibj2.command.Command;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
+  public static IndexerSubsystem m_IndexerSubsystem = new IndexerSubsystem();
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
+  public static BallUp m_BallUp = new BallUp(m_IndexerSubsystem);
+  public static ShootBall m_ShootBall = new ShootBall(m_IndexerSubsystem);
+
+  private Joystick joy = new Joystick(0);
 
 
 
@@ -42,6 +50,11 @@ public class RobotContainer {
    * {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
+    JoystickButton shootButton = new JoystickButton(joy, Constants.BUTTON_SHOOT_ID);
+    JoystickButton ballUpButton = new JoystickButton(joy, Constants.BUTTON_SHOOT_ID);
+
+    shootButton.whenPressed(m_ShootBall);
+    ballUpButton.whenPressed(m_BallUp);
   }
 
 
