@@ -2,6 +2,8 @@ package frc.robot;
 
 public class RobotMap {
   // Ports
+  public static final int CAN_JOYSTICK = 4;
+
   public static final int CAN_INDEXER_UPDOWN1 = 0;
   public static final int CAN_INDEXER_UPDOWN2 = 1;
   public static final int CAN_INDEXER_SHOOTER = 2;

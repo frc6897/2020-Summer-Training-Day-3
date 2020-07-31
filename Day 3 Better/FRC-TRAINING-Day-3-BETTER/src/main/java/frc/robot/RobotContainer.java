@@ -39,7 +39,7 @@ public class RobotContainer {
   public static ShootBall m_ShootBall = new ShootBall(m_IndexerSubsystem);
 
   public static Joystick accessibleJoystick;
-  public Joystick joy = new Joystick(0);
+  public Joystick joy = new Joystick(RobotMap.CAN_JOYSTICK);
 
 
 
@@ -62,6 +62,8 @@ public class RobotContainer {
     JoystickButton shootButton = new JoystickButton(joy, RobotMap.BUTTON_SHOOT_ID);
     JoystickButton ballUpButton = new JoystickButton(joy, RobotMap.BUTTON_SHOOT_ID);
 
+    // Siddarth's commits construct a new Command, i.e.
+    // instead of m_ShootBall he has new ShootBall(), is this wrong?
     shootButton.whileHeld(m_ShootBall);
     ballUpButton.whileHeld(m_BallUp);
   }

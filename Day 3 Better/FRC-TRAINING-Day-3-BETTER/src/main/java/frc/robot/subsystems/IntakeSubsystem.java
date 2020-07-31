@@ -54,6 +54,9 @@ public class IntakeSubsystem extends SubsystemBase {
     closingSolenoid.set(true);
   }
 
+  // This is resetConfiguration as opposed to shutEverythingOff
+  // is the purpose of the cancel method to stop or to go back
+  // to normal
   public void resetConfiguration () {
     openingSolenoid.set(false);
     closingSolenoid.set(true);
