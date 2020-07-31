@@ -29,13 +29,16 @@ public class ExampleSubsystem extends SubsystemBase {
   }
   public void moveUp() {
     rightMotor.set(1);
+    rightMotor.set(.5);
 
   }
   public void moveDown() {
     leftMotor.set(-1);
+    leftMotor.set(-.5);
   }
   public void runSet() {
     centralMotor.set(1);
+    centralMotor.set(.5);
   }
   @Override
   public void periodic() {

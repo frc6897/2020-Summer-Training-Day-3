@@ -25,7 +25,8 @@ public class RobotContainer {
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
 
-  private final XboxController controller = new XboxController(0);
+
+
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
@@ -41,17 +42,6 @@ public class RobotContainer {
    * {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    button.whenPressed(runIndexer());
-    if (whenHeld = true && button == 1) {
-      button.execute(runSet);
-    }
-    else if (whenHeld = true && button == 2) {
-      button.execute(runUp);
-    }
-    else if (whenHeld = true && button == 3) {
-      button.execute(runDown);
-    } else {
-    }
   }
 
 
