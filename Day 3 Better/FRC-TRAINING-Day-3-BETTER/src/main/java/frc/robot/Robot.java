@@ -96,6 +96,35 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopPeriodic() {
+    /*
+    More so to practice using the POV, the Intake system is controlled
+    by the POV on the controller.
+
+    When at the top of the POV, the intake primes, then as the angle
+    decreases clockwise the robot first clamps down, and then pulls in.
+    */
+    int angle = RobotContainer.accessibleJoystick.getPOV(
+                  RobotMap.POV_INTAKE_ID);
+
+    if (angle == -1) {
+      return;
+
+      // Top 90 deg (45 deg both ways) = Prime
+    } else if (angle < 45 || angle > 315) {
+      RobotContainer.m_PrimeIntake.execute();
+
+      // Right 90 deg = Lunge forward
+    } else if (angle >= 45 && angle < 135) {
+      RobotContainer.m_ClampIntake.execute();
+
+      // Bottom 90 deg = Reel in
+    } else if (angle >= 135 && angle < 224) {
+      RobotContainer.m_ReelIn.execute();
+
+    }
+      // This means that pressing the left 90 deg does nothing
+
+
   }
 
   @Override

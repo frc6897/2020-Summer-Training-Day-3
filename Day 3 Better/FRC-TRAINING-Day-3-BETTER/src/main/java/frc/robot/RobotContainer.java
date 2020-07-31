@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.*;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.IndexerSubsystem;
+import frc.robot.subsystems.IntakeSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
@@ -26,12 +27,19 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
   public static IndexerSubsystem m_IndexerSubsystem = new IndexerSubsystem();
+  public static IntakeSubsystem m_IntakeSubsystem = new IntakeSubsystem();
 
+  // TODO: Check if these should be static or not
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
+  public static ReelIn m_ReelIn = new ReelIn(m_IntakeSubsystem);
+  public static ClampIntake m_ClampIntake = new ClampIntake(m_IntakeSubsystem);
+  public static PrimeIntake m_PrimeIntake = new PrimeIntake(m_IntakeSubsystem);
+
   public static BallUp m_BallUp = new BallUp(m_IndexerSubsystem);
   public static ShootBall m_ShootBall = new ShootBall(m_IndexerSubsystem);
 
-  private Joystick joy = new Joystick(0);
+  public static Joystick accessibleJoystick;
+  public Joystick joy = new Joystick(0);
 
 
 
@@ -41,6 +49,7 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
+    RobotContainer.accessibleJoystick = joy;
   }
 
   /**
@@ -50,11 +59,11 @@ public class RobotContainer {
    * {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    JoystickButton shootButton = new JoystickButton(joy, Constants.BUTTON_SHOOT_ID);
-    JoystickButton ballUpButton = new JoystickButton(joy, Constants.BUTTON_SHOOT_ID);
+    JoystickButton shootButton = new JoystickButton(joy, RobotMap.BUTTON_SHOOT_ID);
+    JoystickButton ballUpButton = new JoystickButton(joy, RobotMap.BUTTON_SHOOT_ID);
 
-    shootButton.whenPressed(m_ShootBall);
-    ballUpButton.whenPressed(m_BallUp);
+    shootButton.whileHeld(m_ShootBall);
+    ballUpButton.whileHeld(m_BallUp);
   }
 
 
