@@ -26,9 +26,9 @@ public class ExampleSubsystem extends SubsystemBase {
   CANSparkMax rightMotor = new CANSparkMax(constants.RIGHT_MOTOR, CANSparkMaxLowLevel.MotorType.kBrushless);
   CANSparkMax leftMotor = new CANSparkMax(constants.LEFT_MOTOR, CANSparkMaxLowLevel.MotorType.kBrushless);
   TalonSRX centralMotor = new TalonSRX(2);
+  TalonSRX feedMotor = new TalonSRX(2);
   }
   public void moveUp() {
-    rightMotor.set(1);
     rightMotor.set(.5);
 
   }
@@ -37,8 +37,7 @@ public class ExampleSubsystem extends SubsystemBase {
     leftMotor.set(-.5);
   }
   public void runSet() {
-    centralMotor.set(1);
-    centralMotor.set(.5);
+    feedMotor.set(.5);
   }
   @Override
   public void periodic() {
