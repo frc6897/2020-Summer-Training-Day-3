@@ -7,6 +7,7 @@
 
 package frc.robot.subsystems;
 
+ 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel;
@@ -21,7 +22,7 @@ public class IndexerSubsystem extends SubsystemBase {
    * 
    */
 
-  private CANSparkmax spark1;
+  private CANSparkMax spark1;
   private CANSparkMax spark2; 
     private TalonSRX talon1;
 
@@ -35,13 +36,13 @@ public class IndexerSubsystem extends SubsystemBase {
   }
 
   
-  public storeBallUp() {
+  public void storeBallUp() {
     spark1.set(-0.8);
     talon1.set(ControlMode.PercentOutput, 0.8);
     talon1.setNeutralMode(NeutralMode.Brake);
 
   }
-  public shootBall() {
+  public void shootBall() {
     talon1.set(ControlMode.PercentOutput, -0.8);
     talon1.setNeutralMode(NeutralMode.Coast);
   }
@@ -50,4 +51,6 @@ public class IndexerSubsystem extends SubsystemBase {
     spark1.set(0);
     talon1.set(ControlMode.PercentOutput, 0);
   }
-  @Override
+  
+
+}
