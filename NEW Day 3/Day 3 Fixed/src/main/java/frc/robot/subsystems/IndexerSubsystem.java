@@ -27,11 +27,11 @@ public class IndexerSubsystem extends SubsystemBase {
     private TalonSRX talon1;
 
   public IndexerSubsystem() {
-     spark1 = new CANSparkMax(0, CANSparkMaxLowLevel.MotorType.kBrushless);
-     spark2 = new CANSparkMax(1, CANSparkMaxLowLevel.MotorType.kBrushless);
-     talon1 = new TalonSRX(2);
+     spark1 = new CANSparkMax(0, CANSparkMaxLowLevel.MotorType.kBrushless);  // top left
+     spark2 = new CANSparkMax(1, CANSparkMaxLowLevel.MotorType.kBrushless);  // middle
+     talon1 = new TalonSRX(2);                                               // top right
 
-    spark2.follow(spark1,true);
+    spark2.follow(spark1,true);           
     talon1.setNeutralMode(NeutralMode.Coast);
   }
 
@@ -42,7 +42,7 @@ public class IndexerSubsystem extends SubsystemBase {
     talon1.setNeutralMode(NeutralMode.Brake);
 
   }
-  public void shootBall() {
+  public void ballDown() {
     talon1.set(ControlMode.PercentOutput, -0.8);
     talon1.setNeutralMode(NeutralMode.Coast);
   }

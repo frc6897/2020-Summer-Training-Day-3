@@ -30,7 +30,7 @@ public class RobotContainer {
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
   public static StoreBallUp m_StoreBallUp = new StoreBallUp();
-  public static ShootBall m_ShootBall = new ShootBall();
+  public static BallDown m_ShootBall = new BallDown();
 
 public static IndexerSubsystem m_IndexerSubsystem = new IndexerSubsystem();
 
@@ -55,7 +55,7 @@ public static IndexerSubsystem m_IndexerSubsystem = new IndexerSubsystem();
    */
   private void configureButtonBindings() {
     button1.whileHeld(new StoreBallUp());
-    button2.whileHeld(new ShootBall());  
+    button2.whileHeld(new BallDown());  
   }
 
 
