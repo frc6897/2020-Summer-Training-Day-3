@@ -14,7 +14,6 @@ import com.revrobotics.CANSparkMaxLowLevel;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
-import com.ctre.phoenix.motorcontrol.NeutralMode;  
 
 public class IndexerSubsystem extends SubsystemBase {
   /**
@@ -39,7 +38,7 @@ public class IndexerSubsystem extends SubsystemBase {
   public void storeBallUp() {
     spark1.set(-0.8);
     talon1.set(ControlMode.PercentOutput, 0.8);
-    talon1.setNeutralMode(NeutralMode.Brake);
+    
 
   }
   public void ballDown() {
