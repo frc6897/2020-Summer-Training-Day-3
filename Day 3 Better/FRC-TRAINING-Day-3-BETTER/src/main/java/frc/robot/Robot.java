@@ -17,8 +17,11 @@ Indexer Subsystem:
 - ball up and ball down had the motor moving in the same direction,
   they should be moving in opposite directions
 - ball up, ball down, and shoot ball should be 3 different methods because every
-  function goes in a different method in the subsystem. And then shoot ball will
-  call ball down and shoot ball
+  function goes in a different method in the subsystem And then shoot ball will call ball down and shoot ball. 
+  Having them as 2 methods is fine; nothing wrong w it but since each method in a subsystem corresponds
+  to a different thing it has to do, then it makes more sense to do 3 in the command-based format
+
+  
 
  */
 
