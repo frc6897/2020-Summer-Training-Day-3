@@ -12,6 +12,18 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
 /**
+FEEDBACK
+Indexer Subsystem:
+- ball up and ball down had the motor moving in the same direction,
+  they should be moving in opposite directions
+- ball up, ball down, and shoot ball should be 3 different methods because every
+  function goes in a different method in the subsystem. And then shoot ball will
+  call ball down and shoot ball
+
+ */
+
+
+/**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
  * each mode, as described in the TimedRobot documentation. If you change the name of this class or
  * the package after creating this project, you must also update the build.gradle file in the
