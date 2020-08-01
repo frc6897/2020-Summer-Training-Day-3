@@ -32,7 +32,7 @@ public class IndexerSubsystem extends SubsystemBase {
      talon1 = new TalonSRX(2);                                               // middle
 
     spark2.follow(spark1,true);           
-    talon1.setNeutralMode(NeutralMode.Coast);
+    
   }
 
   
@@ -45,7 +45,7 @@ public class IndexerSubsystem extends SubsystemBase {
   public void ballDown() {
     spark1.set(0.8);
     talon1.set(ControlMode.PercentOutput, 0.8);
-    talon1.setNeutralMode(NeutralMode.Coast);
+    
   }
 
   public void setMotors() {
