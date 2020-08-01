@@ -11,6 +11,17 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
+
+/**
+- Indexer looks good!
+- For Intake, there should have been 3 different commands: Intake up,
+  intake down, and a command that spins the intake. This is because double solenoids
+  only need to be set once, so sending the intake down signal while feeding is redundant
+  Other than that, great job!
+ */
+
+
+
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
  * each mode, as described in the TimedRobot documentation. If you change the name of this class or
