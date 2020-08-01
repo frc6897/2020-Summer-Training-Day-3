@@ -14,7 +14,7 @@ import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.IndexerSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.commands.StoreBallUp;
-import frc.robot.commands.ShootBall;
+import frc.robot.commands.BallDown;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
@@ -30,7 +30,7 @@ public class RobotContainer {
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
   public static StoreBallUp m_StoreBallUp = new StoreBallUp();
-  public static BallDown m_ShootBall = new BallDown();
+  public static BallDown m_BallDown = new BallDown();
 
 public static IndexerSubsystem m_IndexerSubsystem = new IndexerSubsystem();
 

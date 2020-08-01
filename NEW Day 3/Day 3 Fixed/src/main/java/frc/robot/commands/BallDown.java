@@ -10,9 +10,9 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
 
-public class ShootBall extends CommandBase {
+public class BallDown extends CommandBase {
   /**
-   * Creates a new ShootBall.
+   * Creates a new BallDown.
    */
   public BallDown() {
     // Use addRequirements() here to declare subsystem dependencies.
