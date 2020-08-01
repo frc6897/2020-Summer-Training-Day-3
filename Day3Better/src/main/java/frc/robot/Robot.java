@@ -14,10 +14,14 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
 /**
 - Indexer looks good!
-- For Intake, there should have been 3 different commands: Intake up,
+  - You could just have 2 methods in the indexer subsystem and that's fine, but since there's 3 different things 
+    it has to do (think about which 3 things it has to do), then it makes sense to have 3 methods
+- For Intake, there should have been 3 different commands: Intake up, 
   intake down, and a command that spins the intake. This is because double solenoids
   only need to be set once, so sending the intake down signal while feeding is redundant
-  Other than that, great job!
+
+  
+Other than that, great job!
  */
 
 
