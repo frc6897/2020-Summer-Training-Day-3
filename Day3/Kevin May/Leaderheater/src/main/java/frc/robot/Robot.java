@@ -12,6 +12,34 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
 /**
+FEEDBACK
+Indexer Subsystem:
+- you didn't need to restate the variable type CANSparkMax for rightMotor and 
+  leftMotor (lines 26 and 27) - doing this again creates two new variables with identical names,
+  meaning there are two unused variables called rightMotor and leftMotor
+- both the left and right motors should be moving for moveUp and moveDown -
+  the ball might make it with just one motor going, but the indexer
+  wouldn't be that effective at its job
+  ^ also, keep in mind, the two motors would always spin in opposite directions
+  
+Indexer Command:
+- it looks like you're missing a command for the subsystem, let me know if you need help
+
+RobotContainer:
+- don't forget to create objects for the commands and subsystems! (see line 24 for an example)
+- yes, the button configurations were understandable XD , but the whenPressed() method 
+  should take in a new command, not a method, e.g. button.whenPressed(new Command);
+  ^I think you may have been confused because you don't have a Command 
+  - ^ also, "whenHeld" doesn't really mean anything by itself so your if statements won't work as you want them to
+    I love that you tried imperative style programming, but you might want to check out the Day 3 slides 
+    about Button class (check out button.whenHeld()) again
+    
+it looks like you're getting how command based programming works, and there's just a few things to brush up!    
+*/
+
+
+
+/**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
  * each mode, as described in the TimedRobot documentation. If you change the name of this class or
  * the package after creating this project, you must also update the build.gradle file in the
