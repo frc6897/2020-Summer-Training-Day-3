@@ -17,7 +17,8 @@ Indexer Subsystem:
 - ball up and ball down had the motor moving in the same direction,
   they should be moving in opposite directions
 - you didn't include a method that moves the ball down
-  
+- you also need to declare the indexer subsystem in RobotContainer 
+ (see the example in line 29 (or around there))   
 
  */
 
