@@ -25,7 +25,6 @@ public class ExampleSubsystem extends SubsystemBase {
 
   CANSparkMax rightMotor = new CANSparkMax(constants.RIGHT_MOTOR, CANSparkMaxLowLevel.MotorType.kBrushless);
   CANSparkMax leftMotor = new CANSparkMax(constants.LEFT_MOTOR, CANSparkMaxLowLevel.MotorType.kBrushless);
-  TalonSRX centralMotor = new TalonSRX(2);
   TalonSRX feedMotor = new TalonSRX(2);
   }
   public void moveUp() {
@@ -33,7 +32,6 @@ public class ExampleSubsystem extends SubsystemBase {
 
   }
   public void moveDown() {
-    leftMotor.set(-1);
     leftMotor.set(-.5);
   }
   public void runSet() {
