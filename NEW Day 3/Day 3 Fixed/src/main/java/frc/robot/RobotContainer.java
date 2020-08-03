@@ -11,7 +11,12 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.IndexerSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.commands.StoreBallUp;
+import frc.robot.commands.BallDown;
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -24,8 +29,14 @@ public class RobotContainer {
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
+  public static StoreBallUp m_StoreBallUp = new StoreBallUp();
+  public static BallDown m_BallDown = new BallDown();
 
+public static IndexerSubsystem m_IndexerSubsystem = new IndexerSubsystem();
 
+  private Joystick joy1 = new Joystick(0);
+  private JoystickButton button1 = new JoystickButton(joy1, 1);
+  private JoystickButton button2 = new JoystickButton(joy1, 2);
 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
@@ -33,6 +44,7 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
+    
   }
 
   /**
@@ -42,6 +54,8 @@ public class RobotContainer {
    * {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
+    button1.whileHeld(new StoreBallUp());
+    button2.whileHeld(new BallDown());  
   }
 
 
