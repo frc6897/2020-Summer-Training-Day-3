@@ -12,6 +12,29 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
 /**
+FEEDBACK
+Indexer Subsystem:
+- there should be two motors dedicated to moving the ball up and down, but
+  it looks you only have one, called index_rightMotor - you can fix this by 
+  making another motor called index_leftMotor 
+  ^ also, keep in mind, the two motors spin in opposite directions
+  
+Indexer Command:
+- it looks like you're missing commands for the subsystem
+  remember, the command basically coordinates/uses a subsystem's methods for one function
+  (e.g. Move ball up) and gets used by buttons and joysticks
+  
+RobotContainer:
+- don't forget to create objects for the commands and subsystems! (see line 24 for an example)
+- it also looks like you're missing the button configurations - these are statements that
+  say which button on a joystick does which command 
+  
+  if you're confused, make sure to check out the Day 2 and 3 slides again + reach out!
+*/
+
+
+
+/**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
  * each mode, as described in the TimedRobot documentation. If you change the name of this class or
  * the package after creating this project, you must also update the build.gradle file in the
