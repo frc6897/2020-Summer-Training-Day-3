@@ -30,11 +30,13 @@ public class ExampleSubsystem extends SubsystemBase {
   public void moveUp() {
     rightSpark.set(1);
     leftSpark.set(-1);
+    botttomSpark.set(1);
   }
 
   public void moveDown() {
     rightSpark.set(-1);
     leftSpark.set(1);
+    botttomSpark.set(-1);
   } 
   @Override
   public void periodic() {

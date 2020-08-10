@@ -13,6 +13,8 @@ import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import frc.robot.commands.MoveDownCommand;
 
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -26,7 +28,7 @@ public class RobotContainer {
   //private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
 
   private Button indexerUp = new JoystickButton(joystick, 1);
-
+  private Button indexerDown = new JoystickButton(joystick, 3);
 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
@@ -43,7 +45,8 @@ public class RobotContainer {
    * {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    indexerUp.whileHeld();
+    indexerUp.whileHeld(new ExampleCommand);
+    indexerDown.whileHeld(new MoveDownCommand);
   }
 
 
