@@ -11,6 +11,17 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
+/*
+FEEDBACK:
+- Move up shouldn't move the bottom motor since the bottom motor is only for feeding into the shooter.
+  Otherwise, Indexer subsystem looks good!
+- For commands,  you have to include parentheses on method calls
+- Don't use ExampleCommand/Subsystem, always make a new one
+- In RobotContinaer, use of buttons is good but you never declared a joystick object
+- Other than those small changes, it was good overall
+ */
+
+
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
  * each mode, as described in the TimedRobot documentation. If you change the name of this class or
