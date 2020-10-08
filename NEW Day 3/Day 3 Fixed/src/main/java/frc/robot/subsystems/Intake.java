@@ -27,19 +27,19 @@ public class Intake extends SubsystemBase {
   }
   public void retract{
     lArm.set(DoubleSolenoid.Value.kForward);
-	rArm.set(DoubleSolenoid.Value.kForward);
+	  rArm.set(DoubleSolenoid.Value.kForward);
   }
   public void extend{
     lArm.set(DoubleSolenoid.Value.kReverse);
-	rArm.set(DoubleSolenoid.Value.kReverse);
+	  rArm.set(DoubleSolenoid.Value.kReverse);
   }
   public void feed{
     intakeMotor.set(ControlMode.PercentOutput,1);
   }
   public void stop{
     intakeMotor.set(ControlMode.PercentOutput,0);
-	lArm.set(DoubleSolenoid.Value.kOff);
-	rArm.set(DoubleSolenoid.Value.kOff);
+	  lArm.set(DoubleSolenoid.Value.kOff);
+	  rArm.set(DoubleSolenoid.Value.kOff);
   }
 
   @Override
