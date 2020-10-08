@@ -61,9 +61,9 @@ public class RobotContainer {
   private void configureButtonBindings() {
     squareButton.whileHeld(new BallDown());
     xButton.whileHeld(new Shoot());
-	circleButton.whileHeld(new ExtendIntake());
-	triButton.whileHeld(new RetractIntake());
-	rJSButton.whileHeld(new IntakeFeed());
+	  circleButton.whileHeld(new ExtendIntake());
+  	triButton.whileHeld(new RetractIntake());
+	  rJSButton.whileHeld(new IntakeFeed());
   }
 
 
